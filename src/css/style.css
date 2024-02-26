@@ -1,18 +1,52 @@
 body {
-  background-color: #111;
+  background-color: #333c4b;
+  margin: 0;
+  overflow: hidden; /* Para que no haya desplazamiento horizontal */
 }
 
+.container {
+  display: grid;
+  place-items: center;
+  align-items: center;
+  height: 100vh;
+  margin-top: -230px; /* Ajusta este valor según lo que necesites */
+}
+
+canvas {
+  border: 2px solid #d4a056;
+  border-bottom: transparent;
+  background: url('./bkg.png') repeat;
+  box-shadow: 0 0 20px 0 rgb(223 234 244 / 40%);
+  display: block;
+  margin: 0 auto;
+  position: relative; /* Para que las animaciones relativas al canvas sean relativas a él */
+}
+
+/* Animaciones de la pelota */
+.ball {
+  animation: spin 1s linear infinite; /* La pelota girará siempre */
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Animación de la paleta */
+.paddle {
+  transition: transform 0.2s ease; /* Movimiento suave de la paleta */
+}
+
+.paddle:hover {
+  transform: scale(1.1); /* Escalar la paleta al pasar el ratón sobre ella */
+}
+
+/* Otros estilos */
 .title {
   color: #fff;
   display: grid;
   place-items: center;
+  font-size: 38px;
   padding: 2px;
-}
-
-canvas {
-  border: 4px solid #fc9292;
-  border-bottom: transparent;
-  background-color: #161616;
-  margin: 0 auto;
-  display: block;
 }
