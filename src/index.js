@@ -1,3 +1,5 @@
+/* eslint-disable no-use-before-define */
+/* eslint-disable no-continue */
 /* eslint-disable no-plusplus */
 const canvas = document.querySelector('canvas');
 const ctx = canvas.getContext('2d');
@@ -172,6 +174,7 @@ function ballMovement() {
     y + dy > canvas.height - ballRadius ||
     y + dy > paddleY + paddleHeight
   ) {
+    // eslint-disable-next-line no-console
     console.log('Game Over');
     document.location.reload();
   }
